@@ -1,6 +1,6 @@
 //
-//  EssentialFeedTests.swift
-//  EssentialFeedTests
+//  RemoteFeedLoaderTest.swift
+//  RemoteFeedLoaderTest
 //
 //  Created by Max Lukashevich on 15/10/2023.
 //
@@ -12,17 +12,27 @@ final class RemoteFeedLoaderTest: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() {
         let client = HTTPClientSpy()
-        _ = makeSUT()
+        _ = makeSUT ()
 
-        XCTAssertNil(client.requestedURL)
+        XCTAssertTrue(client.requestedURLs.isEmpty)
     }
 
-    func test_load_requestDataFromURL() {
+    func test_load_requestsDataFromURL() {
         let url = URL.init(string: "http://some-url.com")!
         let (sut, client) = makeSUT(url: url)
         sut.load()
-        XCTAssertEqual(client.requestedURL, url)
+        XCTAssertEqual(client.requestedURLs, [url])
     }
+
+    func test_load_requestsDataFromURLTwice() {
+        let url = URL.init(string: "http://some-url.com")!
+        let (sut, client) = makeSUT(url: url)
+        sut.load()
+        sut.load()
+
+        XCTAssertEqual(client.requestedURLs, [url, url])
+    }
+
 
     // MARK: Helpers
 
@@ -33,10 +43,10 @@ final class RemoteFeedLoaderTest: XCTestCase {
     }
 
     private class HTTPClientSpy: HTTPClient {
-        var requestedURL: URL?
+        var requestedURLs = [URL]()
 
         func get(from url: URL) {
-            requestedURL = url
+            requestedURçLs.append(url)
         }
     }
 }
