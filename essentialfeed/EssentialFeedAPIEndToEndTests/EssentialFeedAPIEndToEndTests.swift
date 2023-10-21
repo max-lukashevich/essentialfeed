@@ -8,6 +8,7 @@
 import XCTest
 import EssentialFeed
 
+
 final class EssentialFeedAPIEndToEndTests: XCTestCase {
 
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
@@ -34,9 +35,14 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
 
     // MARK: Helpers
 
-    func getFeedResult() -> LoadFeedResult? {
+    func getFeedResult(file: StaticString = #filePath, line: UInt = #line) -> LoadFeedResult? {
         let url = URL(string: "http://essentialdeveloper.com/feed-case-study/test-api/feed")!
+        let client = URLSessionHTTPClient()
         let sut = RemoteFeedLoader(url: url, client: URLSessionHTTPClient())
+
+
+        trackForMemoryLeak(client, file: file, line: line)
+        trackForMemoryLeak(sut, file: file, line: line)
 
         let exp = expectation(description: "Waiting for result")
 
