@@ -16,6 +16,7 @@
 		5093FE0C2AE04DC400294CF4 /* URLSessionHTTPRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5093FE0B2AE04DC400294CF4 /* URLSessionHTTPRequestsTests.swift */; };
 		50F0AD5E2ADC4146001D8879 /* FeedItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F0AD5D2ADC4146001D8879 /* FeedItemsMapper.swift */; };
 		50F37A112AE3DFA500EB1309 /* XCTestCase+MemroyLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F37A102AE3DFA500EB1309 /* XCTestCase+MemroyLeaks.swift */; };
+		50F37A132AE4099C00EB1309 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F37A122AE4099C00EB1309 /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		5093FE0B2AE04DC400294CF4 /* URLSessionHTTPRequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPRequestsTests.swift; sourceTree = "<group>"; };
 		50F0AD5D2ADC4146001D8879 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		50F37A102AE3DFA500EB1309 /* XCTestCase+MemroyLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemroyLeaks.swift"; sourceTree = "<group>"; };
+		50F37A122AE4099C00EB1309 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				502810E02ADC160A00D36A11 /* RemoteFeedLoader.swift */,
 				50F0AD5D2ADC4146001D8879 /* FeedItemsMapper.swift */,
 				506724592ADEFBF800064DB7 /* HTTPClient.swift */,
+				50F37A122AE4099C00EB1309 /* URLSessionHTTPClient.swift */,
 			);
 			path = FeedAPI;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50F0AD5E2ADC4146001D8879 /* FeedItemsMapper.swift in Sources */,
+				50F37A132AE4099C00EB1309 /* URLSessionHTTPClient.swift in Sources */,
 				502810E22ADC160A00D36A11 /* RemoteFeedLoader.swift in Sources */,
 				5067245A2ADEFBF800064DB7 /* HTTPClient.swift in Sources */,
 				502810E12ADC160A00D36A11 /* FeedLoader.swift in Sources */,
