@@ -1,2 +1,0 @@
-Target dependency graph (1 target)
-Target 'EssentialFeed' in project 'EssentialFeed' (no dependencies)
